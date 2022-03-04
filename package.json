@@ -1,6 +1,7 @@
 {
   "name": "libredirect",
   "description": "Redirects YouTube, Twitter, Instagram and more to privacy friendly frontends.",
+  "type": "module",
   "engines": {
     "node": ">=16.13.1",
     "npm": ">=8.1.2"

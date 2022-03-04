@@ -59,7 +59,7 @@ function changeProtocolSettings(protocol) {
   }
 }
 
-searchHelper.init().then(() => {
+searchHelper.init(browser).then(() => {
   disableSearchElement.checked = !searchHelper.getDisable();
   let frontend = searchHelper.getFrontend();
   searchFrontendElement.value = frontend;

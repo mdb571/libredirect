@@ -7,7 +7,7 @@ let nameCustomInstanceInput = document.getElementById("exceptions-custom-instanc
 let instanceTypeElement = document.getElementById("exceptions-custom-instance-type");
 let instanceType = "url"
 
-youtubeHelper.init().then(() => {
+youtubeHelper.init(browser).then(() => {
     instanceTypeElement.addEventListener("change",
         (event) => {
             instanceType = event.target.options[instanceTypeElement.selectedIndex].value

@@ -2,8 +2,6 @@
 
 import commonHelper from '../common.js'
 
-window.browser = window.browser || window.chrome;
-
 const targets = [
   /^https?:\/\/(www\.|music\.|m\.|)youtube\.com(\/.*|$)/,
 
@@ -662,8 +660,11 @@ function initInvidiousCookies(tabId) {
   );
 }
 
-async function init() {
-  return new Promise((resolve) => {
+let browser;
+async function init(myBrowser) {
+  console.log("initYoutube");
+  browser = myBrowser;
+  return new Promise(resolve => {
     fetch('/instances/data.json').then(response => response.text()).then(data => {
       let dataJson = JSON.parse(data);
       browser.storage.local.get(
@@ -706,7 +707,8 @@ async function init() {
           "youtubeEmbedExceptions",
           "bypassWatchOnYoutube"
         ],
-        (result) => {
+        result => {
+          console.log(result);
           redirects.invidious = dataJson.invidious;
           if (result.youtubeRedirects) redirects = result.youtubeRedirects;
 

@@ -1,7 +1,7 @@
 import youtubeHelper from "../../../assets/javascripts/helpers/youtube/youtube.js";
 import commonHelper from "../../../assets/javascripts/helpers/common.js";
 
-youtubeHelper.init().then(() => {
+youtubeHelper.init(browser).then(() => {
     commonHelper.processDefaultCustomInstances(
         'pipedMaterial',
         'normal',

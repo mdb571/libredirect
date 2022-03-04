@@ -1,4 +1,3 @@
-window.browser = window.browser || window.chrome;
 import twitterHelper from "./twitter.js";
 import youtubeHelper from "./youtube/youtube.js";
 import instagramHelper from "./instagram.js";
@@ -35,14 +34,14 @@ async function getRandomOnlineInstance(instances) {
 }
 
 async function wholeInit() {
-  await youtubeHelper.init();
-  await twitterHelper.init();
-  await instagramHelper.init();
-  await redditHelper.init();
-  await translateHelper.init();
-  await searchHelper.init();
-  await wikipediaHelper.init();
-  await mediumHelper.init();
+  await youtubeHelper.init(browser);
+  await twitterHelper.init(browser);
+  await instagramHelper.init(browser);
+  await redditHelper.init(browser);
+  await translateHelper.init(browser);
+  await searchHelper.init(browser);
+  await wikipediaHelper.init(browser);
+  await mediumHelper.init(browser);
 }
 
 async function updateInstances() {

@@ -1,4 +1,3 @@
-window.browser = window.browser || window.chrome;
 import commonHelper from './common.js'
 
 const targets = /^https?:\/\/(((www|maps)\.)?(google\.).*(\/maps)|maps\.(google\.).*)/;
@@ -126,8 +125,10 @@ function redirect(url) {
   return redirect;
 }
 
-async function init() {
-  return new Promise((resolve) => {
+let browser;
+async function init(myBrowser) {
+  return new Promise(resolve => {
+    browser = myBrowser;
     browser.storage.local.get(
       "disableMaps",
       (result) => {

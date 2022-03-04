@@ -28,7 +28,7 @@ function changeProtocolSettings(protocol) {
     }
 }
 
-imgurHelper.init().then(() => {
+imgurHelper.init(browser).then(() => {
     disableImgurElement.checked = !imgurHelper.getDisable();
 
     let protocol = imgurHelper.getProtocol();

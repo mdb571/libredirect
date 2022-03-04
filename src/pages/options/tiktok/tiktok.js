@@ -28,7 +28,7 @@ function changeProtocolSettings(protocol) {
     }
 }
 
-tiktokHelper.init().then(() => {
+tiktokHelper.init(browser).then(() => {
     disableTiktokElement.checked = !tiktokHelper.getDisable();
 
     let protocol = tiktokHelper.getProtocol();

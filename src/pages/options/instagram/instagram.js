@@ -28,7 +28,7 @@ function changeProtocolSettings(protocol) {
     }
 }
 
-instagramHelper.init().then(() => {
+instagramHelper.init(browser).then(() => {
     disableInstagramElement.checked = !instagramHelper.getDisable();
 
     let protocol = instagramHelper.getProtocol();

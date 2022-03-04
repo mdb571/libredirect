@@ -1,4 +1,4 @@
-window.browser = window.browser || window.chrome;
+"use strict";
 
 import commonHelper from './common.js'
 
@@ -181,9 +181,10 @@ function changeInstance(url) {
   let randomInstance = commonHelper.getRandomInstance(instancesList);
   return `${randomInstance}${url.pathname}${url.search}`;
 }
-
-async function init() {
-  return new Promise((resolve) => {
+let browser;
+async function init(myBrowser) {
+  browser = myBrowser;
+  return new Promise(resolve => {
     fetch('/instances/data.json').then(response => response.text()).then(data => {
       let dataJson = JSON.parse(data);
       browser.storage.local.get(

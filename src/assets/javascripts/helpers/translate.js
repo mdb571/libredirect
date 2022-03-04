@@ -1,5 +1,3 @@
-window.browser = window.browser || window.chrome;
-
 import commonHelper from './common.js'
 
 const targets = [
@@ -268,8 +266,10 @@ function changeInstance(url) {
   return `${randomInstance}${url.pathname}${url.search}`;
 }
 
-async function init() {
-  return new Promise((resolve) => {
+let browser;
+async function init(myBrowser) {
+  return new Promise(resolve => {
+    browser = myBrowser;
     fetch('/instances/data.json').then(response => response.text()).then(data => {
       let dataJson = JSON.parse(data);
       browser.storage.local.get(

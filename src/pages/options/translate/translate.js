@@ -73,7 +73,7 @@ simplyTranslateEngineElement.addEventListener("change",
     event => translateHelper.setSimplyTranslateEngine(event.target.options[simplyTranslateEngineElement.selectedIndex].value)
 );
 
-translateHelper.init().then(() => {
+translateHelper.init(browser).then(() => {
     disableElement.checked = !translateHelper.getDisable();
 
     let frontend = translateHelper.getFrontend();

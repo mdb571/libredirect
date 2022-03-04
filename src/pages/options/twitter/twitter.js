@@ -34,7 +34,7 @@ bypassWatchOnTwitterElement.addEventListener("change",
     event => twitterHelper.setBypassWatchOnTwitter(event.target.checked)
 );
 
-twitterHelper.init().then(() => {
+twitterHelper.init(browser).then(() => {
     disableTwitterElement.checked = !twitterHelper.getDisable();
     bypassWatchOnTwitterElement.checked = twitterHelper.getBypassWatchOnTwitter();
 

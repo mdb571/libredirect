@@ -66,7 +66,7 @@ bypassWatchOnRedditElement.addEventListener("change",
     event => redditHelper.setBypassWatchOnReddit(event.target.checked)
 );
 
-redditHelper.init().then(() => {
+redditHelper.init(browser).then(() => {
     disableRedditElement.checked = !redditHelper.getDisableReddit();
     bypassWatchOnRedditElement.checked = redditHelper.getBypassWatchOnReddit();
 

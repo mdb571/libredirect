@@ -1,5 +1,4 @@
 "use strict";
-window.browser = window.browser || window.chrome;
 
 let alwaysUsePreferred;
 const getAlwaysUsePreferred = () => alwaysUsePreferred;
@@ -31,19 +30,24 @@ function isException(url) {
     return false;
 }
 
-async function init() {
+let browser;
+async function init(myBrowser) {
     return new Promise(
-        resolve => browser.storage.local.get(
-            [
-                "exceptions",
-                "alwaysUsePreferred"
-            ],
-            r => { // r = result
-                if (r.exceptions) exceptions = r.exceptions;
-                alwaysUsePreferred = r.alwaysUsePreferred ?? false;
-                resolve();
-            }
-        )
+        resolve => {
+            browser = myBrowser;
+            browser.storage.local.get(
+                [
+                    "exceptions",
+                    "alwaysUsePreferred"
+                ],
+                r => { // r = result
+
+                    if (r.exceptions) exceptions = r.exceptions;
+                    alwaysUsePreferred = r.alwaysUsePreferred ?? false;
+                    resolve();
+                }
+            )
+        }
     )
 }
 

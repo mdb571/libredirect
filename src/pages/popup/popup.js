@@ -29,18 +29,18 @@ let disableImgurElement = document.getElementById("disable-imgur");
 let disableTiktokElement = document.getElementById("disable-tiktok");
 
 async function wholeInit() {
-  await youtubeHelper.init();
-  await youtubeMusicHelper.init();
-  await twitterHelper.init();
-  await instagramHelper.init();
-  await mapsHelper.init();
-  await redditHelper.init();
-  await searchHelper.init();
-  await translateHelper.init();
-  await wikipediaHelper.init();
-  await imgurHelper.init();
-  await tiktokHelper.init();
-  await mediumHelper.init();
+  await youtubeHelper.init(browser);
+  await youtubeMusicHelper.init(browser);
+  await twitterHelper.init(browser);
+  await instagramHelper.init(browser);
+  await mapsHelper.init(browser);
+  await redditHelper.init(browser);
+  await searchHelper.init(browser);
+  await translateHelper.init(browser);
+  await wikipediaHelper.init(browser);
+  await imgurHelper.init(browser);
+  await tiktokHelper.init(browser);
+  await mediumHelper.init(browser);
 };
 
 wholeInit().then(() => {

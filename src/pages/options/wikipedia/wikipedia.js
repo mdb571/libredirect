@@ -29,7 +29,7 @@ function changeProtocolSettings(protocol) {
     }
 }
 
-wikipediaHelper.init().then(() => {
+wikipediaHelper.init(browser).then(() => {
     disableWikipediaElement.checked = !wikipediaHelper.getDisable();
 
     let protocol = wikipediaHelper.getProtocol();

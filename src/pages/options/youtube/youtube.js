@@ -164,7 +164,7 @@ function changeProtocolSettings(protocol) {
     }
 }
 
-youtubeHelper.init().then(() => {
+youtubeHelper.init(browser).then(() => {
     disableYoutubeElement.checked = !youtubeHelper.getDisable();
     themeElement.value = youtubeHelper.getTheme();
     volumeElement.value = youtubeHelper.getVolume();

@@ -27,7 +27,7 @@ invidiousSubtitlesElement.addEventListener("change",
 // );
 
 
-youtubeHelper.init().then(() => {
+youtubeHelper.init(browser).then(() => {
     invidiousPlayerStyleElement.value = youtubeHelper.getInvidiousPlayerStyle();
     invidiousAlwaysProxyElement.value = youtubeHelper.getInvidiousAlwaysProxy();
     console.log("youtubeHelper.getInvidiousAlwaysProxy()", youtubeHelper.getInvidiousAlwaysProxy())

@@ -6,7 +6,7 @@ disableYoutubeMusicElement.addEventListener("change",
     (event) => youtubeMusicHelper.setDisable(!event.target.checked)
 );
 
-youtubeMusicHelper.init().then(() => {
+youtubeMusicHelper.init(browser).then(() => {
     disableYoutubeMusicElement.checked = !youtubeMusicHelper.getDisable();
 
     commonHelper.processDefaultCustomInstances(

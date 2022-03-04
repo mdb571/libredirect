@@ -5,6 +5,6 @@ disableMapsElement.addEventListener("change",
     (event) => mapsHelper.setDisable(!event.target.checked)
 );
 
-mapsHelper.init().then(() => {
+mapsHelper.init(browser).then(() => {
     disableMapsElement.checked = !mapsHelper.getDisable();
 })

@@ -29,7 +29,7 @@ function changeProtocolSettings(protocol) {
 }
 
 
-mediumHelper.init().then(() => {
+mediumHelper.init(browser).then(() => {
     disableMediumElement.checked = !mediumHelper.getDisable();
 
     let protocol = mediumHelper.getProtocol();

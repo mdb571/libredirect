@@ -77,7 +77,7 @@ let nameCustomInstanceInput = document.getElementById("exceptions-custom-instanc
 let instanceTypeElement = document.getElementById("exceptions-custom-instance-type");
 let instanceType = "url"
 
-generalHelper.init().then(() => {
+generalHelper.init(browser).then(() => {
   alwaysUsePreferredElement.checked = generalHelper.getAlwaysUsePreferred();
   console.log("generalHelper.getAlwaysUsePreferred()");
   instanceTypeElement.addEventListener("change",
