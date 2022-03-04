@@ -2,7 +2,7 @@
   "name": "LibRedirect",
   "description": "__MSG_extensionDescription__",
   "version": "1.4.8",
-  "manifest_version": 2,
+  "manifest_version": 3,
   "background": {
     "page": "pages/background/background.html",
     "persistent": true
@@ -38,7 +38,22 @@
     "open_in_tab": true
   },
   "web_accessible_resources": [
-    "assets/javascripts/helpers/youtube/piped-preferences.js",
-    "assets/javascripts/helpers/youtube/pipedMaterial-preferences.js"
+    {
+      "resources": [
+        "assets/javascripts/helpers/youtube/piped-preferences.js"
+      ],
+      "matches": [
+        "*"
+      ]
+    },
+    {
+      "resources": [
+        "assets/javascripts/helpers/youtube/pipedMaterial-preferences.js"
+      ],
+      "matches": [
+        "*"
+      ],
+      "use_dynamic_url": true
+    }
   ]
 }
