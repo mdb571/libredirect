@@ -21,15 +21,12 @@ jobs:
         run: |
           npm run ejs
           npm run build
-      - name: Hash artifacts
-        run: sha256sum artifacts/*/*
-        if: startsWith(github.ref, 'refs/tags/v')
       - name: Upload artifacts
         uses: actions/upload-artifact@v3
         if: startsWith(github.ref, 'refs/tags/v')
         with:
           name: artifacts
-          path: artifacts/
+          path: web-ext-artifacts/
           retention-days: 1
   release:
     name: Release on GitHub
@@ -48,9 +45,7 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: artifacts
-          path: artifacts/
-      - name: Hash artifacts
-        run: sha256sum artifacts/*/*
+          path: web-ext-artifacts/
       - name: Create GitHub release
         uses: softprops/action-gh-release@v1
         with:
@@ -58,6 +53,6 @@ jobs:
           name: ${{ steps.release_info.outputs.TAG }}
           body: |
             Download and install the extension from the [extension store](https://github.com/libredirect/libredirect#readme) of your browser.
-          files: artifacts/*/*
+          files: web-ext-artifacts/*
           fail_on_unmatched_files: true
           draft: true
