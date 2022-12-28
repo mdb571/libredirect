@@ -23,7 +23,6 @@ jobs:
           npm run build
       - name: Upload artifacts
         uses: actions/upload-artifact@v3
-        if: startsWith(github.ref, 'refs/tags/v')
         with:
           name: artifacts
           path: web-ext-artifacts/
@@ -32,7 +31,6 @@ jobs:
     name: Release on GitHub
     runs-on: ubuntu-22.04
     needs: [build]
-    if: startsWith(github.ref, 'refs/tags/v')
     permissions:
       contents: write
     steps:
